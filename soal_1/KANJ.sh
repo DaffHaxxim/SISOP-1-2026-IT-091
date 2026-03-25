@@ -1,11 +1,9 @@
-#!/bin/bash
+BEGIN {
+    FS = ","
+    option = ARGV[2]
+    delete ARGV[2]
+}
 
-if [ $# -lt 2 ]; then
-    echo "Usage: bash soal_1/KANJ.sh soal_1/passenger.csv (a/b/c/d/e)"
-    exit 1
-fi
-
-awk -F',' -v option="$2" '
 NR > 1 {
     total++
 
@@ -49,4 +47,3 @@ END {
         exit 1
     }
 }
-' "$1"
