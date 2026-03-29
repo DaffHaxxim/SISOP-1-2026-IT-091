@@ -7,7 +7,7 @@ BEGIN {
 NR > 1 {
     total++
 
-    carriage[$3] = 1
+    carriage[$4] = 1
 
     age = $2 + 0
     total_age += age
@@ -17,7 +17,7 @@ NR > 1 {
         oldest = $1
     }
 
-    if ($4 == "Business Class") {
+    if ($3 == "Business") {
         business_count++
     }
 }
